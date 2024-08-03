@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AuxCmdConverter (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "AuxCmdConverter (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
