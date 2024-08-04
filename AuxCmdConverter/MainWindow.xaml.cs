@@ -14,11 +14,26 @@ namespace AuxCmdConverter
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+
+        //public string CustomTitle = "Test";
+
+        private string _customTitle;
+        public string CustomTitle
+        {
+            get => _customTitle;
+        }
+
         public MainWindow()
         {
+            _customTitle = "Ahoooooooooooooooj";
+            
             this.InitializeComponent();
+            
 
-            this.AppWindow.MoveAndResize(new Windows.Graphics.RectInt32(150, 150, 660, 600));
+            this.ExtendsContentIntoTitleBar = true;
+            this.SetTitleBar(AppTitleBar);
+
+            this.AppWindow.MoveAndResize(new Windows.Graphics.RectInt32(150, 150, 660, 650));
 
             this.Title = string.Format("AUX Cmd Converter v{0}.{1}.{2}.{3}",
                     Package.Current.Id.Version.Major,
@@ -71,6 +86,11 @@ namespace AuxCmdConverter
             var package = new DataPackage();
             package.SetText(tbRawCommand.Text);
             Clipboard.SetContent(package);
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            lvCommands.Items.Clear();
         }
     }
 }
