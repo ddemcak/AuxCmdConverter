@@ -15,10 +15,10 @@
             <TextBlock x:Name="AppTitle" Text="Hello" VerticalAlignment="Top" Margin="0,8,0,0" />
         </Border>
         -->
-   <Grid>
+   <Grid Name="MainGrid">
 
-        <Border x:Name="AppTitleBar" Grid.Column="1" VerticalAlignment="Top" Background="LightSlateGray">
-            <TextBlock x:Name="AppTitle" Text="{Binding Path=local:CustomTitle, RelativeSource={RelativeSource Mode=Self}}" VerticalAlignment="Top" Margin="20,8,0,8" />
+        <Border Name="AppTitleBar" Grid.Column="1" VerticalAlignment="Top" Background="LightSlateGray">
+            <TextBlock Name="AppTitle" Text="{Binding CustomTitle}" VerticalAlignment="Top" Margin="20,8,0,8" />
         </Border>
 
         <StackPanel Name="panel" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,20,20" Width="600">
